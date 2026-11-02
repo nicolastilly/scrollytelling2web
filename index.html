@@ -85,6 +85,17 @@
                 gap: 0.75rem;
             }
 
+            .list-group-title {
+                font-size: 1.125rem;
+                font-weight: 600;
+                margin-top: 1rem;
+                color: var(--foreground);
+            }
+
+            .list-group-title:first-child {
+                margin-top: 0;
+            }
+
             .list-item {
                 display: flex;
                 align-items: center;
@@ -186,54 +197,64 @@
             // Données de la liste
             const listItems = [
                 {
-                    title: "01 - Scrollytelling avec aos",
+                    group: "AOS",
+                    title: "Démarrage avec AOS",
                     description: "Démarrage d'un projet avec la librairie Animate On Scroll.",
                     link: "01/index.html"
                 },
                 {
-                    title: "02 - Scrollytelling avec ScrollyVideo.js",
+                    group: "ScrollyVideo.js",
+                    title: "Démarrage avec ScrollyVideo.js",
                     description: "Démarrage d'un projet avec la librairie ScrollyVideo.js.",
                     link: "02/index.html"
                 },
                 {
-                    title: "03 - Scrollytelling avec GSAP",
+                    group: "GSAP",
+                    title: "ScrollSmoother",
                     description: "Démo de la fonctionnalité ScrollSmoother.",
                     link: "03/index.html"
                 },
                 {
-                    title: "04 - Scrollytelling avec GSAP",
+                    group: "GSAP",
+                    title: "ScrollTo",
                     description: "Démo de la fonctionnalité ScrollTo.",
                     link: "04/index.html"
                 },
                 {
-                    title: "05 - Scrollytelling avec GSAP",
+                    group: "GSAP",
+                    title: "SplitText",
                     description: "Des lignes de texte se divisent lors du défilement.",
                     link: "05/index.html"
                 },
                 {
-                    title: "06 - Scrollytelling avec GSAP",
+                    group: "GSAP",
+                    title: "Flip",
                     description: "Déplacements consécutifs d'un bloc entre plusieurs zones.",
                     link: "06/index.html"
                 },
                 {
-                    title: "07 - Scrollytelling avec GSAP",
+                    group: "GSAP",
+                    title: "MotionPath",
                     description: "Utilisation de MotionPath. Déplacer une forme le long d'un path svg.",
                     link: "07/index.html"
                 },
                 {
-                    title: "08 - Scrollytelling avec GSAP",
+                    group: "GSAP",
+                    title: "Draggable",
                     description: "Utiliser Draggable pour faire tourner une forme",
                     link: "08/index.html"
                 },
                 {
-                    title: "09 - Feedback progression de lecture",
-                    description: "Ajouter une barre de progressiond de lecture.",
-                    link: "09/index.html"
-                },
-                {
-                    title: "10 - Scrollytelling avec GSAP",
+                    group: "GSAP",
+                    title: "DrawSVG",
                     description: "Utiliser DrawSVG pour dessiner une illustration vectorielle au scroll.",
                     link: "10/index.html"
+                },
+                {
+                    group: "Feedbacks",
+                    title: "Barre de progression de lecture",
+                    description: "Ajouter une barre de progressiond de lecture.",
+                    link: "09/index.html"
                 }
             ];
 
@@ -272,7 +293,18 @@
                 const listContainer = document.getElementById('list');
                 listContainer.innerHTML = '';
 
+                let currentGroup = null;
+
                 listItems.forEach((item, index) => {
+                    // Titre de groupe quand on change de librairie
+                    if (item.group !== currentGroup) {
+                        currentGroup = item.group;
+                        const groupTitle = document.createElement('h3');
+                        groupTitle.className = 'list-group-title';
+                        groupTitle.textContent = item.group;
+                        listContainer.appendChild(groupTitle);
+                    }
+
                     const listItemElement = createListItem(item, index);
                     listContainer.appendChild(listItemElement);
                 });
@@ -289,8 +321,8 @@
             });
 
             // Fonction pour ajouter un nouvel élément (exemple d'utilisation)
-            function addItem(title, description, link) {
-                listItems.push({ title, description, link });
+            function addItem(group, title, description, link) {
+                listItems.push({ group, title, description, link });
                 renderList();
             }
         </script>
