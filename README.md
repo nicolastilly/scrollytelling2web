@@ -1,4 +1,6 @@
-# Exemples du cours scrollytelling 2 web
+# Scrollytelling 2 web
+Exemples et démos
+
 
 ![screen capture](images/capture.png)
 ![screen capture 2](images/capture02.png)
