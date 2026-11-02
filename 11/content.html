@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu Slide Down</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- lien aos -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Menu plein écran : la hauteur passe de 0% à 100% pour descendre depuis le haut -->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#s01" onclick="closeNav()">Accueil</a>
+                <a href="#s02" onclick="closeNav()">Projet</a>
+                <a href="#s03" onclick="closeNav()">Citation</a>
+                <a href="#s01" onclick="closeNav()">Contact</a>
+            </div>
+        </div>
+
+        <!-- Bouton d'ouverture du menu -->
+        <span class="openbtn" onclick="openNav()">&#9776;</span>
+
+        <section id="s01">
+
+            <div class="div1">
+                <h1>Mobile Layouts & Grids</h1>
+            </div>
+            <div class="div2"> </div>
+
+            <div class="div3" data-aos="fade-up"> </div>
+
+            <div class="div4" data-aos="fade-up" data-aos-delay="300"> </div>
+
+        </section>
+
+
+
+        <section id="s02">
+
+            <div class="div1s02">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat auctor
+                    orci quis
+                    viverra. Duis euismod
+                    purus eu arcu sodales molestie. Phasellus sed purus quis diam fringilla dictum.
+                    Pellentesque vel
+                    felis in arcu dapibus
+                    varius. Donec mattis tempor nisi nec tincidunt. Suspendisse potenti. Sed efficitur urna
+                    ac imperdiet
+                    suscipit. Donec
+                    vitae vestibulum nibh. Etiam blandit ultricies tellus et gravida. Nunc ac nulla non
+                    justo rhoncus
+                    fringilla nec a nibh.
+                    Nulla facilisi. Donec eu tempus lorem. Maecenas faucibus mollis vehicula. Sed volutpat
+                    pharetra nisi
+                    nec facilisis.
+                    Aliquam et ultrices est.
+                    <br><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat auctor
+                    orci quis
+                    viverra. Duis euismod
+                    purus eu arcu sodales molestie. Phasellus sed purus quis diam fringilla dictum.
+                    Pellentesque vel
+                    felis in arcu dapibus
+                    varius. Donec mattis tempor nisi nec tincidunt. Suspendisse potenti. Sed efficitur urna
+                    ac imperdiet
+                    suscipit. Donec
+                    vitae vestibulum nibh. Etiam blandit ultricies tellus et gravida. Nunc ac nulla non
+                    justo rhoncus
+                    fringilla nec a nibh.
+                    Nulla facilisi. Donec eu tempus lorem. Maecenas faucibus mollis vehicula. Sed volutpat
+                    pharetra nisi
+                    nec facilisis.
+                    Aliquam et ultrices est.
+                </p>
+            </div>
+
+            <div class="div2s02" data-aos="flip-left"> </div>
+
+
+            <section id="s03">
+
+                <div class="div1s03" data-aos="fade-left" data-aos-delay="300" data-aos-duration="900">
+                    <p>Nulla facilisi. Donec eu tempus lorem. Maecenas faucibus mollis vehicula.</p>
+                </div>
+
+            </section>
+
+        </section>
+
+    </body>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+
+        /* Ouvre le menu : l'overlay prend toute la hauteur de l'écran */
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        /* Ferme le menu : l'overlay remonte à une hauteur de 0 */
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
+
+</html>

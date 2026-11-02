@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+
+/*section 01*/
+#s01 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px 220px;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    padding: 0 20px 0 20px;
+    /*attention, cela sert à ajouter les marges extérieures*/
+}
+
+#s01 h1 {
+    font-size: 4em;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    background: black;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div4 {
+    background: black;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+/*section 02*/
+
+#s02 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 220px;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    padding: 0 20px 0 20px;
+}
+
+.div1s01 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2s02 {
+    grid-area: 2 / 1 / 3 / 2;
+    background: black;
+    border-radius: 8px;
+    width: 100%;
+    height: 220px;
+}
+
+/*section 03*/
+#s03 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.6fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    padding: 0 20px 0 20px;
+}
+
+#s03 p {
+    font-size: 2.3em;
+    font-style: italic;
+    text-align: right;
+    font-weight: 600;
+}
+
+.div1s03 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+/*menu slide down*/
+
+/* Bouton d'ouverture (icône hamburger) */
+.openbtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 90;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Overlay : caché au départ avec une hauteur de 0 */
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+    /*durée de l'animation d'ouverture et de fermeture*/
+}
+
+/* Liens du menu centrés verticalement */
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Bouton de fermeture (croix) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* Écrans de faible hauteur (téléphone en paysage) */
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
+
+    .overlay a {
+        font-size: 20px;
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
