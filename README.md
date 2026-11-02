@@ -3,7 +3,6 @@ Exemples et démos
 
 
 ![screen capture](images/capture.png)
-![screen capture 2](images/capture02.png)
 
 
 ### Scrollytelling mobile first
